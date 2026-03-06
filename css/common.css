@@ -1,0 +1,247 @@
+@charset 'utf-8';
+@import url('webfonts.css');
+/* 변수 */
+:root {
+    --primary-font: 'Pretendard Variable', sans-serif;
+    --lush-font: 'Lush', serif;
+    --maponaru-font: 'MapoMapoNaru', serif;
+    --primary-color: #222;
+    --secondary-color: #fff;
+    --google-icon: 'Material Symbols Outlined';
+}
+
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+body { /* 배경색, 글자(색상, 글꼴, 줄간격 */
+  font-size: 16px;
+  font-family: var(--primary-font);
+  color: var(--secondary-color);
+  line-height: 1.5;
+  background-color: var(--primary-color);
+  word-break: keep-all;
+}
+body.fixed {
+  overflow: hidden;
+}
+ul, ol {
+  list-style-type: none; 
+}
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+img, iframe, video {
+  vertical-align: middle;
+}
+iframe {
+  border: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td, th {
+  border: 1px solid #ddd;
+  border-width: 0px 1px 1px 0px
+}
+td:last-child, th:last-child {
+  border-right-width: 0;
+}
+input, select, textarea, button {
+  border: 0;
+  font-family: var(--primary-font);
+  font-size: 1em;
+  color: var(--secondary-color);
+  background-color: transparent;
+  vertical-align: middle;
+}
+button {
+  cursor: pointer;
+}
+input:focus, button:focus {
+  outline: 0;
+}
+
+/* 공용클래스 */
+.en {
+  font-family: var(--lush-font);
+}
+.kr {
+  font-family: var(--maponaru-font);
+}
+.wrap {
+  max-width: 1900px;
+  padding: 0 16px;
+  margin: auto;
+}
+.blind {
+  position: absolute; 
+  left: -9999em;
+}
+.clearfix:after {
+  /* 가로 나열을 float을 이용해 하는 경우 부모의 높이가 '0', :after를 생성해서 끄트머리에 배치 */
+  /* float으로 가로 나열한 자식을 가지고 있는 부모 영역에 overflow: auto를 설계하면 높이 문제를 해결(일부 IE는 안됨) */
+  content: '';
+  display: block;
+  clear: both;
+}
+.wh, .wh a {
+  color: var(--secondary-color);
+}
+.bk, .bk a {
+  color: var(--primary-color);
+}
+
+/* 영역별 디자인 */
+/* 1. 헤더 */
+body {
+  position: relative;
+}
+#lush-header {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  z-index: 10;
+}
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.header-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+  font-size: 2em;
+}
+.logo a {
+  display: flex;
+  align-items: center;
+}
+#lush-gnb {
+  display: none;
+}
+
+.util-menu {}
+.util-menu button {
+  color: #fff;
+}
+.util-menu button:before {
+  font-size: 1em;
+  font-family: var(--google-icon);
+}
+.btn-sitemap:before {
+  content: '\e3c7';
+}
+.btn-sitemap {
+  float: left;
+  margin-left: 0.8em;
+}
+
+/* 2. 푸터 */
+
+
+/* 모바일 GNB, PC 사이트맵 */
+.mo-gnb-sitemap {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  background: var(--primary-color) center center / cover no-repeat;
+  transition: 0.5s;
+}
+.mo-gnb-sitemap.on {
+  right: 0;
+  opacity: 1;
+}
+.mo-gnb-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1em;
+}
+.mo-gnb-logo {
+  width: 90px;
+  height: 50px;
+  background: url('../images/logo_wh.png') left center / contain no-repeat;
+}
+.btn-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.btn-close:before {
+  content: '\e5cd';
+  font-size: 2em;
+  font-family: var(--google-icon);
+}
+#lush-mo-gnb {
+  height: calc(100vh - 50px);
+  padding: 1.5em;
+  padding-top: 0;
+  overflow: auto;
+}
+.lush-mo-gnb {}
+.mo-depth1 {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+.mo-depth1 > a { /* 메인메뉴 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5em;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 3;
+}
+.mo-depth1 > a:after { /* 화살표 */
+  content: '\e5c5';
+  font-family: var(--google-icon);
+  transition: 0.3s;
+}
+.mo-depth2 {
+  display: none;
+  padding: 20px;
+}
+.mo-depth2 > li {
+  padding: 0.3em 0;
+}
+.mo-depth2 > li > a {
+  color: var(--secondary-color);
+  display: block;
+}
+.mo-depth2 > li:hover > a, .mo-depth2 > li.active > a {
+  font-weight: 700;
+}
+.mo-depth1.active > a:after {
+  transform: scaleY(-1);
+}
+.mo-depth1.active .mo-depth2 {
+  display: block;
+}

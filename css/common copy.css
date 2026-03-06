@@ -1,0 +1,161 @@
+@charset 'utf-8';
+@import url('webfonts.css');
+/* 변수 */
+:root {
+    --primary-font: 'Pretendard Variable', sans-serif;
+    --lush-font: 'Lush', serif;
+    --maponaru-font: 'MapoMapoNaru', serif;
+    --primary-color: #222;
+}
+
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  /* font-size: 10px; */
+}
+body { /* 배경색, 글자(색상, 글꼴, 줄간격 */
+  font-size: 16px;
+  font-family: var(--primary-font);
+  color: #fff;
+  line-height: 1.5;
+  background-color: var(--primary-color);
+}
+ul, ol {
+  list-style-type: none; 
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+img, iframe, video {
+  vertical-align: middle;
+}
+iframe {
+  border: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td, th {
+  border: 1px solid #ddd;
+  border-width: 0px 1px 1px 0px
+}
+td:last-child, th:last-child {
+  border-right-width: 0;
+}
+input, select, textarea, button {
+  border: 0;
+  font-family: var(--primary-font);
+  font-size: 1em;
+  color: #fff;
+  background-color: transparent;
+  vertical-align: middle;
+}
+input:focus, button:focus {
+  outline: 0;
+}
+
+/* 공용클래스 */
+.en {
+  font-family: var(--lush-font);
+}
+.kr {
+  font-family: var(--maponaru-font);
+}
+.wrap {
+  max-width: 1900px;
+  padding: 0 16px;
+  margin: auto;
+}
+.blind {
+  position: absolute; 
+  left: -9999em;
+}
+.clearfix:after {
+  /* 가로 나열을 float을 이용해 하는 경우 부모의 높이가 '0', :after를 생성해서 끄트머리에 배치 */
+  /* float으로 가로 나열한 자식을 가지고 있는 부모 영역에 overflow: auto를 설계하면 높이 문제를 해결(일부 IE는 안됨) */
+  content: '';
+  display: block;
+  clear: both;
+}
+.wh, .wh a {
+  color: #fff;
+}
+.bk, .bk a {
+  color: var(--primary-color);
+}
+
+/* 영역별 디자인 */
+/* 1. 헤더 */
+#lush-header {
+  background-color: transparent;
+}
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 160px; */
+}
+.header-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 150px;
+  padding: 1em;
+}
+.logo {}
+.logo a {}
+.logo img {}
+#lush-gnb {}
+.lush-gnb {
+  display: flex;
+}
+.depth1 {
+  position: relative;
+}
+.depth1 > a {
+  padding: 1em 30px;
+  font-size: 1.2em;
+  border: 1px solid #f00;
+}
+.depth2 {
+  display: flex;
+  justify-content: space-around;
+  gap: 56px;
+  position: absolute;
+  left: 25%;
+  top: 40px;
+  padding: 24px;
+  background-color: #fff;
+  transform: translateX(-30%);
+
+  height: 295px;
+}
+.depth2 li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid #000;
+
+  height: 250px;
+}
+.depth2 img {
+  width: 300px;
+  height: 180px;
+}
+.depth2 a {}
+
+
+/* 2. 푸터 */

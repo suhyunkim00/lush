@@ -1,0 +1,117 @@
+@charset 'utf-8';
+/* 기본, 모바일 우선 */
+
+/* 1. mo */
+@media screen and (max-width: 767px) {}
+
+/* 2. tb~ */
+@media screen and (min-width: 768px) {}
+
+/* 3. only tb */
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .main-section {
+    padding: 70px;
+  }
+  .small-title {
+    font-size: 1em;
+  }
+  .desc-title {
+    font-size: 1.2em;
+  }
+  .desc {
+    font-size: 0.9em;
+    text-align: center;
+    width: 70%;
+  }
+  .btn {
+    font-size: 1em;
+    width: 200px;
+    padding: 8px;
+  }
+  /* .v-container {
+    max-width: 400px;
+    left: 20%;
+  }
+  .v-txt {
+    font-size: 2.5em;
+  } */
+  .visual-container {
+    padding-top: 56.25%; /* 16:9 */
+  }
+  .visual-video {
+    object-position: center center;
+  }
+  .service-container {
+    gap: 50px;
+  }
+  .service-contents {
+    gap: 1.2em;
+  }
+  .service-content {
+    gap: 1.1em;
+  }
+  .main-section-survey {
+    padding: 70px 50px;
+  }
+  .survey-title {
+    gap: 1em;
+  }
+}
+
+/* 4. laptop 1280~ */
+@media screen and (min-width: 1280px) {
+  .main-section {
+    padding: 150px 240px;
+  }
+  .small-title {
+    font-size: 1.5em;
+  }
+  .desc-title {
+    font-size: 2em;
+  }
+  .desc {
+    font-size: 1em;
+    text-align: center;
+  }
+  .btn {
+    font-size: 1em;
+    width: 200px;
+    padding: 15px;
+  }
+  /* .v-container {
+    max-width: 500px;
+    left: 25%;
+  }
+  .v-txt {
+    font-size: 3em;
+  } */
+  .visual-container {
+    padding-top: 0;
+    height: 100vh;
+  }
+  .visual-video {
+    position: static;
+  }
+  .service-container {
+    gap: 120px;
+  }
+  .service-title {
+    gap: 30px;
+  }
+  .service-contents {
+    gap: 2em;
+  }
+  .service-content {
+    gap: 2em;
+  }
+  .main-section-survey {
+    padding: 150px 110px;
+  }
+  .survey-title {
+    padding: 6em 8em;
+    gap: 2em;
+  }
+}
+
+/* 5. laptop 1921~ */
+@media screen and (min-width: 1921px) {}
