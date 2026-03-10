@@ -1,7 +1,15 @@
 $(function() {
   // 1. 변수 선언
   const body = "body";
-    let viewportW, viewportH;
+  const hd = "#lush-header";
+  const ft = "#lush-footer";
+  let bodyHeight = $(body).height();
+  let viewportW = window.innerWidth;
+  let viewportH = window.innerHeight;
+  let scTop = $(window).scrollTop(); //화면이 스크롤 되는 양
+  let hdHeight = $(hd).height();
+  let ftHeight = $(ft).height();
+  let ftTop = $(ft).offset().top; //top부터 떨어진 거리
   const mainMenu = ".depth1";
   const subMenu = ".depth2-wrap";
   let speed = 500;
@@ -16,6 +24,23 @@ $(function() {
   rwd();
   $(window).resize(function() {
     rwd();
+    bodyHeight = $(body).height();
+    hdHeight = $(hd).height();
+    ftHeight = $(ft).height();
+  });
+  $(window).scroll(function() {
+    scTop = $(window).scrollTop(); //스크롤 되는 양 업데이트
+    if(scTop > hdHeight) { //화면에서 헤더가 보이지 않을 정도로 문서가 스크롤되면
+      $(hd).addClass("fixed");
+    } else {
+      $(hd).removeClass("fixed");
+    }
+    // // 푸터가 화면에 다 보일 때 쯤 헤더 감추기
+    // if(scTop > bodyHeight - viewportH - 100) {
+    //   $(hd).fadeOut(speed);
+    // } else {
+    //   $(hd).fadeIn(speed);
+    // }
   });
 
   // 2. 실행될 스크립트 작성
@@ -71,5 +96,13 @@ $(function() {
     }
     $(smSubMenu).attr("style", "");
   }
+
+  // 부드러운 스크롤
+  const lenis = new Lenis();
+  function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
  
 });

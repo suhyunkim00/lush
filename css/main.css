@@ -17,9 +17,8 @@
 }
 .desc {
   font-size: 0.7em;
-  text-align: center;
   font-weight: 300;
-  width: 60%;
+  width: 100%;
 }
 .btn {
   border: 1px solid var(--secondary-color);
@@ -113,6 +112,10 @@
   width: 90%;
   object-fit: cover;
 }
+.service-content .desc {
+  text-align: center;
+  width: 60%;
+}
 
 
 /* 3. 설문 */
@@ -130,7 +133,34 @@
 }
 
 /* 4. 러쉬소개 */
-
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.about-contents {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+.about-content:first-child,
+.about-content:last-child {
+  width: 90%;
+}
+.about-content:nth-child(2) {
+  width: 75%;
+}
+.about-content:nth-child(3) {
+  width: 85%;
+}
+.about-content img {
+  width: 100%;
+}
 
 /* 5. 기부와 나눔 */
 

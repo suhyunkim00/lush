@@ -20,7 +20,7 @@
   box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   font-size: 10px;
 }
 body { /* 배경색, 글자(색상, 글꼴, 줄간격 */

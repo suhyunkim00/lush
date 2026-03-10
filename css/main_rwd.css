@@ -20,8 +20,6 @@
   }
   .desc {
     font-size: 0.9em;
-    text-align: center;
-    width: 70%;
   }
   .btn {
     font-size: 1em;
@@ -41,13 +39,13 @@
   .visual-video {
     object-position: center center;
   }
-  .service-container {
+  .service-container, .about-container {
     gap: 50px;
   }
-  .service-contents {
+  .service-contents, .about-contents {
     gap: 1.2em;
   }
-  .service-content {
+  .service-content, .about-content {
     gap: 1.1em;
   }
   .main-section-survey {
@@ -71,7 +69,6 @@
   }
   .desc {
     font-size: 1em;
-    text-align: center;
   }
   .btn {
     font-size: 1em;
@@ -98,10 +95,10 @@
   .service-title {
     gap: 30px;
   }
-  .service-contents {
+  .service-contents, .about-contents {
     gap: 2em;
   }
-  .service-content {
+  .service-content, .about-content {
     gap: 2em;
   }
   .main-section-survey {
